@@ -27,7 +27,8 @@ var jsArray = [
     "./bower_components/jStorage/jstorage.js",
     "./app.js",
     "./js/controllers/mainCtrl.js",
-    "./js/controllers/login.js"
+    "./js/controllers/login.js",
+    "./js/services/auth0Service.js"
 ];
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";

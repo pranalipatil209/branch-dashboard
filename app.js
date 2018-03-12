@@ -1,16 +1,22 @@
 angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
     .config(function($stateProvider,$urlRouterProvider){
-        $urlRouterProvider.otherwise("/dashboard");
+        $urlRouterProvider.otherwise("/");
         $stateProvider
             .state("dashboard",{
-                url:"/dashboard",
+                url:"/",
                 templateUrl:"views/main.html",
-                controller:"mainCtrl"
+                controller:"mainCtrl",
+                resolve : {
+                    authCheck : authCheck
+                }
             })
             .state("login",{
                 url:"/login",
                 templateUrl:"views/login.html",
-                controller:"loginCtrl"
+                controller:"loginCtrl",
+                resolve : {
+                    authCheck : authCheck
+                }
             })
     });
 /**
@@ -20,14 +26,14 @@ angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
  * @param $location
  * @returns {Promise}
  */
-// function authCheck($q,localStorageService,$location) {
-//     var deferred = $q.defer();
-//     if (localStorageService.get('token')){
-//         console.log('authenticated');
-//         deferred.resolve();
-//     } else {
-//         deferred.resolve();
-//         $location.path('/login');
-//     }
-//     return deferred.promise;
-// }//end of function
+function authCheck($q,$location) {
+    var deferred = $q.defer();
+    if ($.jStorage.get("isLoggedIn")){
+        console.log('authenticated');
+        deferred.resolve();
+    } else {
+        deferred.resolve();
+        $location.path('/login');
+    }
+    return deferred.promise;
+}//end of function

@@ -22,14 +22,21 @@
                     <form name="loginForm" ng-submit="loginAsUser(userLoginForm)" autocomplete="off">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="email" class="form-control " id="inputGroupSuccess4"
-                                       aria-describedby="Emaild Id" placeholder="Email Id" ng-model="userLoginForm.email">
+                                <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                                <input type="email" name="email" class="form-control " id="inputGroupSuccess4"
+                                       aria-describedby="Emaild Id" placeholder="Email Id" ng-model="userLoginForm.email"
+                                 required ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
+                            </div>
+                            <div class="login-error-veri form-error">
+                                <span ng-show="loginForm.email.$error.required"> * Email is required! </span>
+                                <span ng-show="loginForm.email.$dirty&&loginForm.email.$error.pattern">*Please Enter
+                                Valid Email</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="password" class="form-control " placeholder="Password"
-                                       ng-model="userLoginForm.password">
+                                <input type="password" name="password" class="form-control " placeholder="Password"
+                                       ng-model="userLoginForm.password" required>
                             </div>
                             <div class="forgot-link pt10 text-right">
                                 <a ui-sref="forgot-password-user" class=" avenir-roman">Forgot Password?</a>
@@ -39,7 +46,8 @@
                             <p>*{{showError.msg}}.</p>
                         </div>
                         <div class="btn-login mt25">
-                            <input type="submit" class="btn btn-outline  avenir-roman" value="LOGIN">
+                            <input type="submit" class="btn btn-outline  avenir-roman" value="LOGIN"
+                                   ng-disabled="loginForm.$invalid">
                             </button>
                         </div>
                     </form>
