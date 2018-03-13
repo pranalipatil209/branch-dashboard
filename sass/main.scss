@@ -28,10 +28,6 @@ $brand-lighter-grey: #e3e3e3;
     }
   }
 }
-// body {
-//   padding-top: 70px;
-// }
-// over-ride
 
 a,
 button,
@@ -731,6 +727,9 @@ fieldset[disabled] .btn {
 }
 // end btn classes
 /* Start writing sass here */
+.mobile-components {
+  display: none;
+}
 .login-container {
   height: 100vh;
   width: 100vw;
@@ -810,6 +809,7 @@ fieldset[disabled] .btn {
   background-color: #f8f8f8;
   border-color: #d7d7d7;
   height: 70px;
+  font-family: AvenirLTStd-Medium;
   .container-fluid {
       margin-top: 9px;
   }
@@ -819,6 +819,8 @@ fieldset[disabled] .btn {
 }
 .navbar-brand {
   position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
   img {
     margin-top: -14px;
   }
@@ -826,7 +828,63 @@ fieldset[disabled] .btn {
 .logo {
   margin: auto;
 }
-.navbar-toggle {
-  float: right;
-  margin-right: 15px;
+
+.menu {
+  float: left;
+  margin-left: 15px;
+  border: 0px solid transparent;
 }
+.profile {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  border: 2px solid gray;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.navbar-nav .logout{
+  color: #B1B1B1 !important;
+}
+.nav .mobile-components {
+  display: none;
+}
+.logout span {
+  font-size: 20px;
+  padding-right: 25px;
+  padding-left: 5px;
+  display: none;
+}
+.dash {
+  display: inline-block;
+  //height: 100%;
+  width: 106px;
+  color: #424242;
+  font-family: AvenirLTStd-Heavy;
+  text-align: center;
+  p {
+    margin-top: 12px;
+  }
+}
+.tabs {
+  width: 330px;
+  margin: auto;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  height: 45px;
+}
+.links, .dashboard {
+  border-right: 2px solid lightgray;
+}
+.tab-toggle {
+  padding-top: 15px;
+}
+.active {
+  background-color: #ffffff;
+}
+
+@import "mobile.scss";

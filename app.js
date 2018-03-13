@@ -1,9 +1,9 @@
 angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
     .config(function($stateProvider,$urlRouterProvider){
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise("/dashboard");
         $stateProvider
             .state("dashboard",{
-                url:"/",
+                url:"/dashboard",
                 templateUrl:"views/main.html",
                 controller:"mainCtrl",
                 resolve : {
@@ -18,6 +18,22 @@ angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
                     authCheck : authCheck
                 }
             })
+            .state("dashboard.links",{
+                url:"/links",
+                templateUrl:"views/login.html",
+                controller:"",
+            })
+            .state("dashboard.analytics",{
+                url:"/links",
+                templateUrl:"views/login.html",
+                controller:"",
+            })
+            .state("dashboard.summary",{
+                url:"/links",
+                templateUrl:"views/login.html",
+                controller:"",
+            })
+
     });
 /**
  * @method authCheck - to check the authentication for redirection

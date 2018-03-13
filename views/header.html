@@ -1,0 +1,43 @@
+<div ng-controller="headerCtrl">
+<nav class="navbar navbar-default header" ng-if="valid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nav-header">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle menu" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="../img/travel-bag.png" width="45" alt="">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse dropdown-nav" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <div class="profile">
+                                <img src="../img/Pranali.jpg" alt="" class="img-responsive">
+                            </div>
+                            <a href="#" class="mobile-components avenir-heavy">
+                                Pranali Patil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="avenir-heavy desktop-component">Pranali Patil</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li>
+                            <a href="#" class="avenir-heavy logout" ng-click="logout()">
+                                <span class="glyphicon glyphicon-off"></span>
+                                <p class="p-log">Log Out</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+</div>

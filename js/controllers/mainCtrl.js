@@ -1,4 +1,5 @@
 angular.module("branch-dashboard")
-    .controller("mainCtrl", function($scope, $http) {
-       $scope.show = "Welcome to TraveLibro"
+    .controller("mainCtrl", function($scope, $http, $state) {
+        $scope.show = "Welcome to TraveLibro";
+
     });

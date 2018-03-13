@@ -1,0 +1,36 @@
+@media screen and (min-width: 1400px) {
+}
+@media screen and (max-width: 1400px) {
+}
+@media screen and (max-width: 1204px) {
+}
+@media screen and (max-width: 991px) {
+}
+@media screen and (max-width: 767px) {
+  .dropdown-nav {
+    background-color: #ffffff;
+  }
+  .nav .mobile-components {
+    display: inline-block;
+    position: absolute;
+    padding-top: 15px;
+  }
+  .profile {
+    margin-left: 5px;
+  }
+  .nav .desktop-component {
+    display: none;
+  }
+  .logout {
+    span {
+      display: inline-block;
+    }
+    .p-log{
+      display: inline-block;
+      position: absolute;
+      padding-top: 2px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+}
