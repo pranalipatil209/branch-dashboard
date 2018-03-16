@@ -1,0 +1,31 @@
+<div style="width: 100%; height: 100%; text-align: center">
+    <div class="container-fluid content-placeholder content-chart">
+        <div class="row">
+            <div class="networks pull-left">
+                <select name="" id="channels">
+                    <option value="All Channels" selected><p class="give">ALL CHANNELS</p></option>
+                    <option value="Facebook"><p class="give">FACEBOOK</p></option>
+                    <option value="Twitter"><p class="give">TWITTER</p></option>
+                    <option value="Instagram"><p class="give">INSTAGRAM</p></option>
+                </select>
+            </div>
+            <div class="period">
+                <span class="" ng-class="{'active-period':period=='week'}" ng-click="showChart('week')">WEEKLY</span>
+                <span class="" ng-class="{'active-period':period=='month'}" ng-click="showChart('month')">MONTHLY</span>
+            </div>
+            <div class="date-calendar pull-right">
+                <select name="" id="channels">
+                    <option value="All Channels" selected><p class="give">ALL CHANNELS</p></option>
+                    <option value="Facebook"><p class="give">FACEBOOK</p></option>
+                    <option value="Twitter"><p class="give">TWITTER</p></option>
+                    <option value="Instagram"><p class="give">INSTAGRAM</p></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="chart1" style="min-width: 350px; height: 500px; margin: 0 auto"></div>
+            </div>
+        </div>
+    </div>
+</div>

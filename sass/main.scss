@@ -3,6 +3,7 @@
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import "../bower_components/highcharts/css/highcharts.css";
 
 /* Boots
 trap Variables Goes Here */
@@ -828,11 +829,19 @@ fieldset[disabled] .btn {
 .logo {
   margin: auto;
 }
-
+.notes {
+  font-style: italic;
+  font-size: 16px;
+  font-family: AvenirLTStd-Medium;
+  padding-top: 30px;
+  color: #737373;
+}
 .menu {
   float: left;
   margin-left: 15px;
   border: 0px solid transparent;
+  z-index: 500;
+  position: relative;
 }
 .profile {
   display: inline-block;
@@ -862,29 +871,210 @@ fieldset[disabled] .btn {
 .dash {
   display: inline-block;
   //height: 100%;
-  width: 106px;
-  color: #424242;
+  width: 108px;
+  color: #5c5b5c;
   font-family: AvenirLTStd-Heavy;
   text-align: center;
+  cursor: pointer;
   p {
     margin-top: 12px;
   }
 }
 .tabs {
-  width: 330px;
+  width: 329px;
   margin: auto;
   border: 2px solid lightgray;
   border-radius: 5px;
   height: 45px;
+  color: #5c5b5c;
 }
 .links, .dashboard {
   border-right: 2px solid lightgray;
 }
+.dashboard, .summary {
+  margin-left: -4px;
+}
 .tab-toggle {
   padding-top: 15px;
 }
-.active {
+.active-tab {
   background-color: #ffffff;
 }
+.content-placeholder{
+  width: 885px;
+  color: #5c5b5c;
+  margin: 0 auto 50px;
+}
+.link-card {
+  width: 250px;
+  margin: 50px auto 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
+}
+.channel {
+  font-size: 30px;
+  font-weight: 800;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: white;
+  margin-top: -10px;
+  i {
+    padding: 17px 23px;
+  }
+}
+.channel-name {
+  font-family: AvenirLTStd-Heavy;
+  font-size: 28px;
+  padding-top: 7px;
+  margin-bottom: 0;
+}
+.channel-name-tag {
+  font-family: AvenirLTStd-Heavy;
+  margin-top: -6px;
+  font-size: 12px;
+}
+.input-holder {
+  margin: auto;
+  width: 200px;
+  padding: 10px 0 30px;
+  font-family: AvenirLTStd-Medium;
+}
+.link-card input {
+  font-style: italic;
+  font-size: 11px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.20);
+  border-radius: 8px;
+  border: none;
+}
+.copy-link {
+  font-family: AvenirLTStd-Heavy;
+  font-size: 11px;
+  color: #ffffff;
+  padding: 12px 40px;
+  background: linear-gradient(to bottom right, #f9da68, #ee6084);
+  border: none;
+  border-radius: 4px;
+}
+.link-card a:hover{
+  color: #ffffff;
+}
+.copy-link:active {
+  box-shadow: inset 0px 0px 15px #5c5b5c;
+}
+.link-card .tooltip {
+  //opacity: 0;
+  left: 52%;
+  transform: translate(-50%,0);
+  bottom: 13%;
+}
+.link-card .tooltip-show {
+  opacity: 1;
+}
+.link-card .tooltip .tooltiptext {
+  font-family: AvenirLTStd-Heavy;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  transition: opacity 0.3s;
+  box-shadow: 0px 0px 60px #5c5b5c;
+}
 
+.link-card .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+@include keyframes(fadeIn) {
+  0% { opacity: 1}
+  25% { opacity: 0.75}
+  50% { opacity: 0.50}
+  75% { opacity: 0.25}
+  100% { opacity: 0}
+}
+.fadeIn {
+  @include animation(fadeIn 300ms ease-out);
+}
+.content-chart {
+  width: 75%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-top: 12px;
+}
+#chart1 {
+  padding: 20px;
+}
+.networks, .period, .date-calendar {
+  display: inline-block;
+  padding: 20px 0 ;
+  font-family: AvenirLTStd-Heavy;
+  font-size: 12px;
+}
+.period {
+  margin: auto;
+  span {
+    width: 60px;
+    color: lightgray;
+    font-size: 12px;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+.active-period {
+  color: #5c5b5c !important;
+}
+#channels {
+  //padding: 5px 15px;
+  //background: none;
+  //border: none;
+  //line-height: 27px !important;
+  //background:url('../img/arrow.svg') 90%/10% no-repeat;
+  //background-position:80%;
+  //width: 150px;
+  //-webkit-appearance: none;
+  //-moz-appearance: none;
+}
+.networks, .date-calendar {
+  select {
+    padding: 5px 15px;
+    background: none;
+    border: none;
+    width: 150px;
+    font-size: 12px;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../img/drop.png) 90%/10% no-repeat;
+
+  }
+
+  /* CAUTION: IE hackery ahead */
+  select::-ms-expand {
+    display: none; /* remove default arrow on ie10 and ie11 */
+  }
+
+  /* target Internet Explorer 9 to undo the custom arrow */
+  @media screen and (min-width:0\0) {
+    select {
+      background:none\9;
+      padding: 5px\9;
+    }
+  }
+
+}
 @import "mobile.scss";

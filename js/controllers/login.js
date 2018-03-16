@@ -4,6 +4,6 @@ angular.module("branch-dashboard")
         $scope.loginAsUser = function(userForm) {
             console.log('Login As ',userForm);
             $.jStorage.set("isLoggedIn", true);
-            $state.go('dashboard');
+            $state.go('dashboard.analytics');
         }
     });

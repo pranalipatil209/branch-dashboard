@@ -5,6 +5,9 @@
 @media screen and (max-width: 1204px) {
 }
 @media screen and (max-width: 991px) {
+  .content-placeholder {
+    width: 628px;
+  }
 }
 @media screen and (max-width: 767px) {
   .dropdown-nav {
@@ -31,6 +34,20 @@
       padding-top: 2px;
     }
   }
+  .content-placeholder {
+    width: 300px;
+  }
 }
 @media screen and (max-width: 480px) {
+  .tabs {
+    width: 300px;
+  }
+  .dash {
+    width: 96px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .content-placeholder {
+    width: 280px;
+  }
 }

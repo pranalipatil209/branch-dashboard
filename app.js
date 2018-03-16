@@ -1,6 +1,6 @@
 angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
     .config(function($stateProvider,$urlRouterProvider){
-        $urlRouterProvider.otherwise("/dashboard");
+        $urlRouterProvider.otherwise("/dashboard/analytics");
         $stateProvider
             .state("dashboard",{
                 url:"/dashboard",
@@ -20,25 +20,33 @@ angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
             })
             .state("dashboard.links",{
                 url:"/links",
-                templateUrl:"views/login.html",
-                controller:"",
+                templateUrl:"views/links.html",
+                controller:"linksCtrl",
+                resolve : {
+                    authCheck : authCheck
+                }
             })
             .state("dashboard.analytics",{
-                url:"/links",
-                templateUrl:"views/login.html",
-                controller:"",
+                url:"/analytics",
+                templateUrl:"views/analytics.html",
+                controller:"analyticsCtrl",
+                resolve : {
+                    authCheck : authCheck
+                }
             })
             .state("dashboard.summary",{
-                url:"/links",
-                templateUrl:"views/login.html",
+                url:"/summary",
+                templateUrl:"views/summary.html",
                 controller:"",
+                resolve : {
+                    authCheck : authCheck
+                }
             })
 
     });
 /**
  * @method authCheck - to check the authentication for redirection
  * @param $q
- * @param localStorageService
  * @param $location
  * @returns {Promise}
  */

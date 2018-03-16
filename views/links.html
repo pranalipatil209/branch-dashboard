@@ -1,0 +1,25 @@
+<div style="text-align: center">
+    <div class="container content-placeholder">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" ng-repeat="channel in arr track by $index">
+                <div class="link-card">
+                    <div class="channel">
+                        <i class="fa fa-facebook-f"></i>
+                    </div>
+                    <p class="channel-name">FACEBOOK</p>
+                    <p class="channel-name-tag">Campaigns</p>
+                    <div class="input-holder">
+                        <input type="text" id="{{channel}}" class="form-control" value="{{data1}}">
+                    </div>
+                    <a class="copy-link" ng-click="copyText(data1,channel,$index)">
+                        COPY LINK
+                    </a>
+                    <div class="tooltip" ng-show="channel==can">
+                        <span class="tooltiptext" id="{{$index}}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notes">Only campaigns promoted will these links will be tracked by the dashboard.</div>
+    </div>
+</div>
