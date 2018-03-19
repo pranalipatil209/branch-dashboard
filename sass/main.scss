@@ -3,6 +3,7 @@
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
+@import "../bower_components/angular-ui-select/dist/select.css";
 @import "../bower_components/highcharts/css/highcharts.css";
 
 /* Boots
@@ -833,7 +834,7 @@ fieldset[disabled] .btn {
   font-style: italic;
   font-size: 16px;
   font-family: AvenirLTStd-Medium;
-  padding-top: 30px;
+  padding-top: 50px;
   color: #737373;
 }
 .menu {
@@ -877,22 +878,22 @@ fieldset[disabled] .btn {
   text-align: center;
   cursor: pointer;
   p {
-    margin-top: 12px;
+    margin: 9px 0;
   }
 }
 .tabs {
-  width: 329px;
+  width: 330px;
   margin: auto;
   border: 2px solid lightgray;
   border-radius: 5px;
-  height: 45px;
+  height: 41px;
   color: #5c5b5c;
 }
 .links, .dashboard {
   border-right: 2px solid lightgray;
 }
 .dashboard, .summary {
-  margin-left: -4px;
+  margin-left: -3px;
 }
 .tab-toggle {
   padding-top: 15px;
@@ -908,16 +909,16 @@ fieldset[disabled] .btn {
 .link-card {
   width: 250px;
   margin: 50px auto 0;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.12);
+  background-color: #f5f6fb;
+  border-radius: 18px;
+  box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.15);
 }
 .channel {
   font-size: 30px;
   font-weight: 800;
   display: inline-block;
   border-radius: 50px;
-  background-color: white;
+  background-color: #f5f6fb;
   margin-top: -10px;
   i {
     padding: 17px 23px;
@@ -946,6 +947,7 @@ fieldset[disabled] .btn {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.20);
   border-radius: 8px;
   border: none;
+  background-color: transparent;
 }
 .copy-link {
   font-family: AvenirLTStd-Heavy;
@@ -1013,7 +1015,7 @@ fieldset[disabled] .btn {
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: #ffffff;
-  margin-top: 12px;
+  margin-top: 24px;
 }
 #chart1 {
   padding: 20px;
@@ -1025,7 +1027,8 @@ fieldset[disabled] .btn {
   font-size: 12px;
 }
 .period {
-  margin: auto;
+  //margin: auto;
+  margin-right: 35px;
   span {
     width: 60px;
     color: lightgray;
@@ -1049,6 +1052,7 @@ fieldset[disabled] .btn {
   //-moz-appearance: none;
 }
 .networks, .date-calendar {
+  padding-top: 12px;
   select {
     padding: 5px 15px;
     background: none;
@@ -1056,25 +1060,74 @@ fieldset[disabled] .btn {
     width: 150px;
     font-size: 12px;
     height: 34px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background: url(../img/drop.png) 90%/10% no-repeat;
-
   }
 
   /* CAUTION: IE hackery ahead */
-  select::-ms-expand {
-    display: none; /* remove default arrow on ie10 and ie11 */
-  }
+}
+.networks .ui-select-container {
+  margin-left: 20px;
+}
+.date-calendar .ui-select-container {
+  margin-right: 20px;
+}
+#channels option {
+  height: 20px !important;
+}
+.ui-select-choices-group {
+  background-color: #ffffff;
+  font-family: AvenirLTStd-Heavy;
+  font-size: 11px;
+  color: #5c5b5c;
 
-  /* target Internet Explorer 9 to undo the custom arrow */
-  @media screen and (min-width:0\0) {
-    select {
-      background:none\9;
-      padding: 5px\9;
-    }
+}
+//.selectize-input {
+//  border: none;
+//  background-color: #ffffff !important;
+//  background: url(../img/drop.png) 90%/10% no-repeat;
+//  -webkit-appearance: none;
+//  -moz-appearance: none;
+//  box-shadow: none;
+//}
+.selectize-control.single .selectize-input {
+  border: none;
+  background-color: #ffffff !important;
+  background: url(../img/drop.png) 90%/10% no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+  text-align: center;
+  color: transparent;
+  text-shadow: 0 0 0 #5c5b5c;
+  &:focus {
+    outline: none !important;
   }
-
+}
+.selectize-dropdown.single {
+  border: none;
+  box-shadow: 2px 2px 5px lightgrey;
+}
+.selectize-input:after {
+  display: none !important;
+}
+.selectize-control > .selectize-dropdown {
+  text-align: center;
+}
+.selectize-input > * {
+  display: -moz-inline-stack;
+  /* display: inline-block; */
+  /* vertical-align: baseline; */
+  /* zoom: 1; */
+  text-align: left;
+  font-size: 12px;
+  color: #5c5b5c;
+}
+.ui-select-search:focus {
+  color: transparent;
+  text-shadow: 0px 0px 0px #5c5b5c;
+}
+.highcharts-credits {
+  display: none;
 }
 @import "mobile.scss";

@@ -1,4 +1,4 @@
-angular.module("branch-dashboard",["ui.router", "highcharts-ng"])
+angular.module("branch-dashboard",["ui.router", "highcharts-ng", "ngSanitize", "ui.select"])
     .config(function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise("/dashboard/analytics");
         $stateProvider

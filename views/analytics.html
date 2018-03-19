@@ -2,29 +2,36 @@
     <div class="container-fluid content-placeholder content-chart">
         <div class="row">
             <div class="networks pull-left">
-                <select name="" id="channels">
-                    <option value="All Channels" selected><p class="give">ALL CHANNELS</p></option>
-                    <option value="Facebook"><p class="give">FACEBOOK</p></option>
-                    <option value="Twitter"><p class="give">TWITTER</p></option>
-                    <option value="Instagram"><p class="give">INSTAGRAM</p></option>
-                </select>
+                <ui-select ng-model="dummy.selected" theme="selectize" style="width: 180px;height: 20px"
+                           title="Choose a network" append-to-body="true">
+                    <ui-select-match placeholder="" >
+                        {{$select.selected}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="dum in dummy" ng-click="selectedChannel($select.selected)">
+                        <span ng-bind-html="dum"></span>
+                    </ui-select-choices>
+                </ui-select>
             </div>
-            <div class="period">
+            <div class="period pull-right">
+                <span class="" ng-class="{'active-period':period=='daily'}" ng-click="showChart('daily')">DAILY</span>
                 <span class="" ng-class="{'active-period':period=='week'}" ng-click="showChart('week')">WEEKLY</span>
                 <span class="" ng-class="{'active-period':period=='month'}" ng-click="showChart('month')">MONTHLY</span>
             </div>
-            <div class="date-calendar pull-right">
-                <select name="" id="channels">
-                    <option value="All Channels" selected><p class="give">ALL CHANNELS</p></option>
-                    <option value="Facebook"><p class="give">FACEBOOK</p></option>
-                    <option value="Twitter"><p class="give">TWITTER</p></option>
-                    <option value="Instagram"><p class="give">INSTAGRAM</p></option>
-                </select>
-            </div>
+            <!--<div class="date-calendar pull-right">-->
+                <!--<ui-select ng-model="dummy.selected" theme="selectize" style="width: 180px;height: 20px"-->
+                           <!--title="Choose a network" append-to-body="true">-->
+                    <!--<ui-select-match placeholder="Select">-->
+                        <!--{{$select.selected}}-->
+                    <!--</ui-select-match>-->
+                    <!--<ui-select-choices repeat="dum in dummy">-->
+                        <!--<span ng-bind-html="dum"></span>-->
+                    <!--</ui-select-choices>-->
+                <!--</ui-select>-->
+            <!--</div>-->
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div id="chart1" style="min-width: 350px; height: 500px; margin: 0 auto"></div>
+                <div id="chart1" style="min-width: 350px; height: 520px; margin: 0 auto"></div>
             </div>
         </div>
     </div>
