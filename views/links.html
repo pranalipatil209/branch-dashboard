@@ -4,9 +4,14 @@
             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12" ng-repeat="channel in arr track by $index">
                 <div class="link-card">
                     <div class="channel">
-                        <i class="fa fa-facebook-f"></i>
+                        <i class="fa fa-facebook-f" ng-if="channel=='facebook'"></i>
+                        <i class="fa fa-pinterest" ng-if="channel=='pinterest'"></i>
+                        <i class="fa fa-instagram" ng-if="channel=='instagram'"></i>
+                        <i class="fa fa-twitter" ng-if="channel=='twitter'"></i>
+                        <i class="fa fa-globe" ng-if="channel=='blog'"></i>
+                        <i class="fa fa-chain" ng-if="channel=='social'"></i>
                     </div>
-                    <p class="channel-name">FACEBOOK</p>
+                    <p class="channel-name">{{channel | uppercase}}</p>
                     <p class="channel-name-tag">Campaigns</p>
                     <div class="input-holder">
                         <input type="text" id="{{channel}}" class="form-control" value="{{data1}}">

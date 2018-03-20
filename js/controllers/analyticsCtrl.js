@@ -16,19 +16,15 @@ angular.module("branch-dashboard")
             $scope.period = span;
             $scope.filterChart($scope.dummy.selected, span);
         };
-
         var perShapeGradient = {
             x1: 0,
             y1: 0,
             x2: 1,
             y2: 1
         };
-
         $scope.filterChart = function(network, span) {
             console.log('data we got --> network - ',network,' span - ',span);
-
-
-        Highcharts.chart('chart1', {
+            Highcharts.chart('chart1', {
             chart: {
                 type: 'column',
                 marginBottom: 50
@@ -119,5 +115,4 @@ angular.module("branch-dashboard")
         });
         };
         $scope.filterChart($scope.dummy.selected,$scope.period);
-
     });

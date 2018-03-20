@@ -1,6 +1,6 @@
 angular.module("branch-dashboard",["ui.router", "highcharts-ng", "ngSanitize", "ui.select"])
     .config(function($stateProvider,$urlRouterProvider){
-        $urlRouterProvider.otherwise("/dashboard/analytics");
+        $urlRouterProvider.otherwise("/dashboard/links");
         $stateProvider
             .state("dashboard",{
                 url:"/dashboard",
@@ -37,7 +37,7 @@ angular.module("branch-dashboard",["ui.router", "highcharts-ng", "ngSanitize", "
             .state("dashboard.summary",{
                 url:"/summary",
                 templateUrl:"views/summary.html",
-                controller:"",
+                controller:"summaryCtrl",
                 resolve : {
                     authCheck : authCheck
                 }

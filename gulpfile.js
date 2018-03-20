@@ -31,6 +31,7 @@ var jsArray = [
     "./js/controllers/headerCtrl.js",
     "./js/controllers/linksCtrl.js",
     "./js/controllers/analyticsCtrl.js",
+    "./js/controllers/summaryCtrl.js",
     "./js/services/auth0Service.js"
 ];
 var replacehostFrom = "http://localhost/demo/";

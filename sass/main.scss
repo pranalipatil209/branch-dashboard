@@ -1130,4 +1130,47 @@ fieldset[disabled] .btn {
 .highcharts-credits {
   display: none;
 }
+.summary-chart {
+  width: 400px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-top: 24px;
+  font-family: AvenirLTStd-Medium;
+}
+#chart2 {
+  padding-top: 20px;
+  min-width: 200px;
+  max-width: 210px;
+  height: 240px;
+  margin: auto;
+  .highcharts-button {
+    display: none;
+  }
+}
+
+.circle {
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 25px;
+  border: 2px solid #46d4cd;
+}
+.tagline {
+  color: #5c5b5c;
+  font-size: 16px;
+  padding-top: 5px;
+}
+.count {
+  font-family: AvenirLTStd-Heavy;
+  color: #424242;
+  font-size: 20px;
+  //font-weight: 600;
+}
+.signup-summary .circle {
+  border-color: #f65f50;
+}
+.signup-summary {
+  padding: 10px 0 40px;
+}
 @import "mobile.scss";
