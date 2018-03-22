@@ -41,7 +41,9 @@
     "angular-fade-image-loading": "^0.0.1",
     "highcharts-ng": "^0.0.6",
     "highcharts": "^5.0.12",
-    "angular-ui-tinymce": "^0.0.19"
+    "angular-ui-tinymce": "^0.0.19",
+    "bootstrap-daterangepicker": "https://github.com/dangrossman/bootstrap-daterangepicker.git#^2.1.27",
+    "ng-bs-daterangepicker": "^0.0.6"
   },
   "devDependencies": {
     "angular-translate": "^2.11.0"

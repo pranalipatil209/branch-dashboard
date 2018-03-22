@@ -1,15 +1,40 @@
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
+  .content-chart {
+    width: 60%;
+    margin-top: 50px;
+    height: 700px;
+  }
+  #chart1 {
+    height: 650px;
+  }
+  .summary-chart {
+    width: 500px;
+    margin-top: 50px;
+  }
+  .links-content {
+    margin-top: 50px;
+    width: 950px;
+  }
 }
 @media screen and (max-width: 1400px) {
 }
 @media screen and (max-width: 1204px) {
+  .content-chart {
+    width: 85%;
+  }
 }
 @media screen and (max-width: 991px) {
+  .content-chart {
+    width: 90%;
+  }
   .content-placeholder {
     width: 628px;
   }
 }
 @media screen and (max-width: 767px) {
+  .content-chart {
+    width: 95%;
+  }
   .dropdown-nav {
     background-color: #ffffff;
   }
@@ -39,6 +64,28 @@
   }
 }
 @media screen and (max-width: 480px) {
+  .period {
+    margin-right: 20px;
+  }
+  .period span {
+    font-size: 10px;
+    padding: 0 3px;
+  }
+  .networks .ui-select-container {
+    width: 143px !important;
+    margin-left: 0px;
+    .selectize-input > * {
+      font-size: 10px;
+    }
+  }
+  #chart1 {
+    min-width: 300px;
+    margin: 0 -26px;
+    //padding: 20px 0;
+  }
+  .content-chart {
+    width: 100%;
+  }
   .tabs {
     width: 300px;
   }
@@ -46,7 +93,10 @@
     width: 96px;
   }
 }
-@media screen and (max-width: 320px) {
+  @media screen and (max-width: 320px) {
+  .content-chart {
+    width: 99%;
+  }
   .content-placeholder {
     width: 280px;
   }

@@ -26,7 +26,7 @@ angular.module("branch-dashboard")
             series: [{
                 minPointSize: 10,
                 innerSize: '78%',
-                zMin: 0,
+                ZMin: 0,
                 name: 'countries',
                 data: [{
                     name: 'Clicks',

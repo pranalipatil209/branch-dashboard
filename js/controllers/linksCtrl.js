@@ -8,6 +8,7 @@ angular.module("branch-dashboard")
             $(".tooltip").removeClass("fadeIn");
 
             var copy = document.getElementById(channel);
+            // copy.addClass('trans-select');
             copy.select();
             document.execCommand("Copy");
 
@@ -21,3 +22,4 @@ angular.module("branch-dashboard")
         };
 
     });
+

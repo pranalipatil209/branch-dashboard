@@ -25,6 +25,7 @@ var jsArray = [
     "./bower_components/angular-ui-select/dist/select.js",
     "./bower_components/moment/moment.js",
     "./bower_components/jStorage/jstorage.js",
+    "./bower_components/bootstrap-daterangepicker/daterangepicker.js",
     "./app.js",
     "./js/controllers/mainCtrl.js",
     "./js/controllers/login.js",
