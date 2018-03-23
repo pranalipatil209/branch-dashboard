@@ -72,7 +72,8 @@ angular.module("branch-dashboard")
                         enabled: true,
                         color: '#424242',
                         crop: false,
-                        overflow: 'none'
+                        overflow: 'none',
+                        y: 20
                     }
                 }
             },

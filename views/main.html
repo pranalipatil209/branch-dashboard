@@ -1,7 +1,10 @@
-<div id="header" ng-include="'views/header.html'"></div>
-
-<div class="container-fluid">
-    <div class="tab-toggle">
+<div id="header" ng-include="'views/header.html'" ng-class="{'blur-back':blur1==true}"></div>
+<div class="container-fluid" ng-class="{'blur-back':blur1==true}">
+    <div class="for-admin" ng-if="isAdmin" >
+        <i class="fa fa-search main-search" ng-click="showOverlay()"></i>
+        <span>Search to track Influencers...</span>
+    </div>
+    <div class="tab-toggle" ng-if="!isAdmin">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col xs-12">
                 <div class="tabs">
@@ -18,7 +21,10 @@
             </div>
         </div>
     </div>
-    <div>
+    <div ng-if="!isAdmin">
         <ui-view></ui-view>
     </div>
+</div>
+<div class="overlay">
+    <div class="search" style="height: 50px;width: 300px;margin: auto"></div>
 </div>
