@@ -4,6 +4,14 @@
         <i class="fa fa-search main-search" ng-click="showOverlay()"></i>
         <span>Search to track Influencers...</span>
     </div>
+    <div class="user-search" ng-if="Admin">
+        <!--<span class="profile">-->
+                <!--<img src="../img/Pranali.jpg" alt="" class="img-responsive">-->
+        <!--</span>-->
+        <a href="#" class="avenir-heavy">
+            Pranali Patil
+        </a>
+    </div>
     <div class="tab-toggle" ng-if="!isAdmin">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col xs-12">
@@ -26,5 +34,18 @@
     </div>
 </div>
 <div class="overlay">
-    <div class="search" style="height: 50px;width: 300px;margin: auto"></div>
+    <div class="remove" ng-click="closeOverlay()"></div>
+    <div class="search" style="height: 50px;width: 300px;margin: auto">
+            <input type="text" class="form-control"/>
+            <i class="glyphicon glyphicon-search form-control-feedback"></i>
+        <div class="list-man">
+            <ul id="list">
+                <li ng-click="gotBlogger()">derwfgterg</li>
+                <li ng-click="gotBlogger()">derwfgterg</li>
+                <li ng-click="gotBlogger()">derwfgterg</li>
+                <li ng-click="gotBlogger()">derwfgterg</li>
+                <li ng-click="gotBlogger()">derwfgterg</li>
+            </ul>
+        </div>
+    </div>
 </div>

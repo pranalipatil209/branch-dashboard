@@ -1221,6 +1221,69 @@ fieldset[disabled] .btn {
   filter: blur(5px) brightness(0.5);
   -webkit-filter: blur(5px);
 }
-
+.search {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  //background-color: pink;
+  input {
+    box-shadow: 2px 2px 7px lightgray;
+    border-radius: 7px;
+    text-indent: 30px;
+    height: 45px;
+    border: none;
+    font-family: AvenirLTStd-Medium;
+  }
+  .glyphicon-search {
+    font-size: 18px;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+  }
+}
+.list-man {
+  box-shadow: 2px 2px 7px lightgray;
+  max-height: 200px;
+  overflow: auto;
+  background-color: pink;
+  width: 280px;
+  margin: auto;
+}
+#list {
+  background-color: white;
+  li {
+    padding: 7px 5px;
+    cursor: pointer;
+  }
+}
+#list li:hover {
+  background-color: #f4f6fa;
+}
+.remove {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
+.user-search {
+  //width: 400px;
+  margin: -10px auto 0;
+  text-align: center;
+  //.profile{
+  //  height: 35px;
+  //  width: 35px;
+  //}
+  a {
+    font-size: 20px;
+    background: -webkit-linear-gradient(to bottom right, #f9da68, #ee6084);
+    background: linear-gradient(to bottom right, #f9da68, #ee6084);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-clip: text;
+  }
+}
 @import "mobile.scss";
 

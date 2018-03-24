@@ -33,7 +33,8 @@ var jsArray = [
     "./js/controllers/linksCtrl.js",
     "./js/controllers/analyticsCtrl.js",
     "./js/controllers/summaryCtrl.js",
-    "./js/services/auth0Service.js"
+    "./js/services/auth0Service.js",
+    "./js/services/restService.js"
 ];
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
