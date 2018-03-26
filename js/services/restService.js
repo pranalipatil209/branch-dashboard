@@ -1,7 +1,8 @@
+var adminURL = "";
+// adminURL = "https://travelibro.com/api/";
+adminURL = "https://travelibro.wohlig.com/api/";
 angular.module('branch-dashboard').service('restService', function ($http, $log, $q) {
-    var adminURL = "";
-    // adminURL = "https://travelibro.com/api";
-    adminURL = "https://travelibro.wohlig.com/api";
+
     var self = this;
 
     //    function for httpRequest for all methods

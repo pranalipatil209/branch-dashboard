@@ -1,6 +1,6 @@
 angular.module("branch-dashboard",["ui.router", "highcharts-ng", "ngSanitize", "ui.select"])
-    .config(function($stateProvider,$urlRouterProvider){
-        $urlRouterProvider.otherwise("/dashboard/links");
+    .config(function($stateProvider,$urlRouterProvider,$locationProvider){
+        $urlRouterProvider.otherwise("/login");
         $stateProvider
             .state("dashboard",{
                 url:"/dashboard",
@@ -11,13 +11,21 @@ angular.module("branch-dashboard",["ui.router", "highcharts-ng", "ngSanitize", "
                 }
             })
             .state("login",{
-                url:"/login",
+                url:"/login?id&isadmin",
                 templateUrl:"views/login.html",
-                controller:"loginCtrl",
-                resolve : {
-                    authCheck : authCheck
-                }
+                controller:"loginCtrl"
+                // resolve : {
+                //     authCheck : authCheck
+                // }
             })
+            // .state("loginCallback",{
+            //     url:"/login/:id",
+            //     templateUrl:"views/login.html",
+            //     controller:"loginCtrl"
+            //     // resolve : {
+            //     //     authCheck : authCheck
+            //     // }
+            // })
             .state("dashboard.links",{
                 url:"/links",
                 templateUrl:"views/links.html",
@@ -41,7 +49,8 @@ angular.module("branch-dashboard",["ui.router", "highcharts-ng", "ngSanitize", "
                 resolve : {
                     authCheck : authCheck
                 }
-            })
+            });
+        // $locationProvider.html5Mode(true);
 
     });
 /**

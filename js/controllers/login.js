@@ -1,10 +1,18 @@
 angular.module("branch-dashboard")
-    .controller("loginCtrl", function($scope, $http, $state, authService, restService) {
+    .controller("loginCtrl", function($scope, $http, $state, authService, restService, $interval, $stateParams) {
+        console.log($stateParams.id,$stateParams.isadmin);
         authService.skipIfLoggedIn();
+        $scope.google = adminURL+"useradmin/loginGoogleBranch?returnUrlBranch="+window.location.origin+"/login";
+        $scope.facebook = adminURL+"useradmin/loginFacebookBranch?returnUrlBranch="+window.location.origin+"/login";
+         var callAtIntervaltwitter = function () {
+            // NavigationService.getAccessToken(checktwitter, function (err) {
+                console.log(ref);
+            // });
+        };
 
         $scope.socialLogin = function(loginTo) {
-            ref = window.open(adminURL + "/user/" + loginTo, '_blank', 'location=no');
-            stopinterval = $interval(callAtIntervaltwitter, 2000);
+            ref = window.open(adminURL + "/useradmin/" + loginTo);
+            // stopinterval = $interval(callAtIntervaltwitter, 2000);
         };
 
         $scope.loginAsUser = function(userForm) {
